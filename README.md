@@ -11,5 +11,5 @@ SYTW - PRÁCTICA 03
 
 Para ejecutar la práctica:
 
-	* En una terminal, `rake`
-	* En otra terminal, `rake ` con las opciones `rock`, `paper` o `scissors`
+   * En una terminal, `rake`
+   * En otra terminal, `rake ` con las opciones `rock`, `paper` o `scissors`
