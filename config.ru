@@ -5,6 +5,7 @@ use Rack::Static, :urls => ['/public']
 use Rack::ShowExceptions
 use Rack::Lint
 
+
 run RockPaperScissors::App.new
 end
 
