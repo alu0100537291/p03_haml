@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+  %body
+    %h1 User choice
+    -throws.map do |x| 
+      %a{:href=>"/?choice=#{x}"} 
+        %button "#{x}"
+    %h1 VS
+    %h1 Computer Choice
+    %h2=computer_throw
+    %h1 Resultado
+    %h2=anwser
