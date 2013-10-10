@@ -1,24 +1,19 @@
-desc "Arracar aplicación"
-task :default => :server
-
-desc "run server"
-task :server do	
-sh "rackup"
+desc "Arrancamos servidor"
+task :default do
+  sh "rackup"
 end
 
-# Arractar el servidor con 'rake'
-# En una nueva terminal, 'rake rock', 'rake paper', 'rake scissors'
-desc "run the client with rock"
+desc "Piedra"
 task :rock do
-  sh %{curl -v 'http://localhost:9292?choice=rock'}
+  sh %q{curl -v 'http://localhost:9292?choice=rock'}
 end
 
-desc "run the client with paper"
+desc "Papel"
 task :paper do
   sh %q{curl -v 'http://localhost:9292?choice=paper'}
 end
 
-desc "run the client with scissors"
+desc "Tijeras"
 task :scissors do
   sh %q{curl -v 'http://localhost:9292?choice=scissors'}
 end

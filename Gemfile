@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-group :development, :test do
+group :development do
 	gem "rack"
-	gem "pry-debugger"
 	gem "thin"
 	gem "haml"
+	gem "sinatra"
 end

@@ -3,14 +3,13 @@ require 'rack/response'
 require 'haml'
   
 module RockPaperScissors
-
   class App 
 
     def initialize(app = nil)
       @app = app
       @content_type = :html
-      @defeat = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'} # Jugadas posibles
-      @throws = @defeat.keys # Posibles tiradas
+      @defeat = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+      @throws = @defeat.keys
       
     end
 
@@ -24,29 +23,26 @@ module RockPaperScissors
 
       req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }
 
-      computer_throw = @throws.sample # La tirada del PC es aleatoria
-
-      player_throw = req.GET["choice"] # Jugada escogida por el Jugador
-
+      computer_throw = @throws.sample
+      player_throw = req.GET["choice"]
       anwser = if !@throws.include?(player_throw)
-          "Escoja una jugada:"
+          "Choose one of the following:"
         elsif player_throw == computer_throw
-          "EMPATE"
+          "You tied with the computer"
         elsif computer_throw == @defeat[player_throw]
-          "¡BIEN HECHO!; #{player_throw} GANA A #{computer_throw}"
+          "Nicely done; #{player_throw} beats #{computer_throw}"
         else
-          "¡OUCH!; #{computer_throw} GANA #{player_throw}"
+          "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
         end
-	
-	resultado = {
-		:choose => @choose,
-		:anwser => anwser,
-		:throws => @throws,
-		:computer_throw => computer_throw,
-		:player_throw => player_throw 
-    }
-    
-    res = Rack::Response.new(haml("views/index.html.haml", resultado))
+  
+  resultado = 
+    {
+    :choose => @choose,
+    :anwser => anwser,
+    :throws => @throws,
+    :computer_throw => computer_throw,
+    :player_throw => player_throw}
+      res = Rack::Response.new(haml("views/index.html.haml", resultado))
      
     end # call
   end   # App
