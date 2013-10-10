@@ -9,7 +9,7 @@
         %button "#{x}"
     %h1 VS
     %h1 Computer Choice
-    %h2=computer_throws
+    %h2=computer_throw
     %h1 Resultado
     %h2=anwser
       
