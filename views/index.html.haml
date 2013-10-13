@@ -1,16 +1,27 @@
-!!!
-%html
+%html{:lang => "en"}
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    %title RPS GAME
+    %link{:href => "/public/css/bootstrap.css", :rel => "stylesheet"}
+    %link{:href => "/public/css/bootstrap-responsive.css", :rel => "stylesheet"}
+    %link{:href => "public/css/style.css", :rel => "stylesheet"}
   %body
-    %h1 USUARIO:
-    -throws.map do |x| 
-      %a{:href=>"/?choice=#{x}"} 
-        %button "#{x}"
-    %h1 VS
-    %h1 ORDENADOR:
-    %h2=computer_throw
-    %h1 RESULTADO!
-    %h2=anwser
-      
-
+    %center
+      %h3 User:
+      -throws.map do |x|
+        .btn
+          %a{:href=>"/?choice=#{x}"} 
+            "#{x}"
+      %h4 VS
+      %h3 Computer:
+      %h2=computer_throw
+      %h1 Result!
+      - if (anwser == 'TIE')
+        %h4 TIE!
+        %img{:src => 'http://www.thejobpyramid.com/wp-content/uploads/2012/10/handshake2.png', :alt => 'TIE'}
+      - elsif (anwser == 'WIN')
+        %h4 WIN!
+        %img{:src => 'http://images.wikia.com/clubpenguin/images/0/07/Happy_emoticon.png', :alt => 'WIN'}
+      - else
+        %h4 LOSE!
+        %img{:src => 'http://images2.wikia.nocookie.net/__cb20120401143348/clubpenguin/images/b/b1/Sad_Emoticon.png', :alt => 'LOSE'}

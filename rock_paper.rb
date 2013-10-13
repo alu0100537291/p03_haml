@@ -30,14 +30,13 @@ module RockPaperScissors
       # El Jugador escoge (por medio de botones)
       player_throw = req.GET["choice"] # del path
 
-      anwser = if !@throws.include?(player_throw) # SI se ha guardado algo antes
-          "Game result here!"
-        elsif player_throw == computer_throw
-          "You tied with the computer"
+      anwser = 
+        if (player_throw == computer_throw && (player_throw != '' && computer_throw != ''))
+          "TIE"
         elsif computer_throw == @defeat[player_throw]
-          "Nicely done; #{player_throw} beats #{computer_throw}"
+          "WIN"
         else
-          "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
+          "LOSE"
         end
 	
   # Hash con info
