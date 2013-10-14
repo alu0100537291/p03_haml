@@ -1,15 +1,23 @@
-SYTW - PRÁCTICA 03
-==================
-## Haml ##
+# SYTW - Práctica 3
+## HAML + CSS
 
+### Ejecución
+Para la ejecución de la **práctica**
 
-* Alumno: José Alberto Pérez Melián
-* E-mail: alu0100537291[AT]ull.edu.es
+    rake
 
-¡IMPORTANTE!
-------------
+Después de ejecutar, debe ir a la dirección en el navegador que le proporciona la terminal.
 
-Para ejecutar la práctica:
+Una vez allí, escoja entre las tres jugadas posibles: piedra, papel o tijeras.
 
-   * En una terminal, `rake`
-   * En otra terminal, `rake ` con las opciones `rock`, `paper` o `scissors`
+Tras cada jugada, saldrá una imagen distinta.
+
+### Información
+Está Usted en la rama CSS.
+En esta rama es donde se debe evaluar la práctica, ya que es la que contiene el CSS.
+
+Autor
+-------
+| ALUMNO | CORREO |
+| ---------- | ---------- |
+| José Alberto Pérez Melián   | alu0100537291[AT]ull.edu.es   |
